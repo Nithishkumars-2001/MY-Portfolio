@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> About CEO </title>
+
+    <!--My css-->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+
+<body style="background-color: #1f242d;">
+
+    <main>
+        <!-- Navbar -->
+        <header>
+            <nav class="navbar  px-4 px-md-5 py-4">
+
+                <div class="website-name">
+                    <h2 class="text-white"> <span class="logo-style">P</span>ortfilo</h2>
+                </div>
+
+                <div class="navbar-menu pe-5">
+                    <ul class="text-white">
+                        <a href="#Home">
+                            <li> Home </li>
+                        </a>
+                        <a href="#About">
+                            <li> About </li>
+                        </a>
+                        <a href="#Techskills">
+                            <li> Skills </li>
+                        </a>
+                        <a href="#Myservice">
+                            <li> Services </li>
+                        </a>
+                        <a href="#">
+                            <li> Projects </li>
+                        </a>
+                        <a href="#">
+                            <li> Certificate </li>
+                        </a>
+                        <a href="#">
+                            <li> Contact </li>
+                        </a>
+                    </ul>
+                </div>
+
+                <div class="navbar-menu-toggle text-white" onclick="shownavbar()">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </div>
+            </nav>
+
+            <!--Side Navbar-->
+            <aside class="side-navbar">
+                <p class="cross-symbol" onclick="closenavbar()"> <i class="fa fa-times" aria-hidden="true"></i> </p>
+                <div class="website-name">
+                    <h2 class="text-white"> <span class="logo-style">P</span>ortfilo</h2>
+                </div>
+
+                <div class="side-navbar-links">
+                    <p class="side-navbar-link"> <a href="#Home"> Home </a> </p>
+                    <p class="side-navbar-link"> <a href="#About"> About </a> </p>
+                    <p class="side-navbar-link"> <a href="#Techskills"> Skills </a> </p>
+                    <p class="side-navbar-link"> <a href="#Myservice"> Services </a> </p>
+                    <p class="side-navbar-link"> <a href="#"> Projects </a> </p>
+                    <p class="side-navbar-link"> <a href="#"> Certificate </a> </p>
+                    <p class="side-navbar-link"> <a href="#"> Contact </a> </p>
+                </div>
+            </aside>
+        </header>
+
+        <!-- Profile -->
+        <section id="Home" class="profile py-4">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="home col-12 col-md-8 px-3 px-md-5 mt-4 mt-md-0" style="align-content: center;">
+                        <div class="home-info text-white">
+                            <h1 style="color: #ff2770; font-size: 40px;"> Nithish Kumar </h1>
+
+                            <h2 class="pt-2"> I'm a
+                                <span style="--i:4" data-text="Full Stack Developer"> Full Stack Developer </span>
+                                <span style="--i:3" data-text="Web Developer"> Web Developer </span>
+                                <span style="--i:2" data-text="Full Stack Developer"> Full Stack Developer </span>
+                                <span style="--i:1" data-text="Web Developer"> Web Developer </span>
+                            </h2>
+
+                            <p class="pt-2"> Seamlessly integrating front-end and back-end technologies to develop
+                                scalable and
+                                efficient web solutions. Focused on creating dynamic, user-centric experiences that
+                                enhance functionality and performance. </p>
+
+                            <div class="social-icons text-white py-3 ">
+                                <div class="social-icon"> <a href="#"> <i class="fa-brands fa-instagram"></i> </a> </div>
+                                <div class="social-icon"> <a href="#"> <i class="fa-brands fa-linkedin-in"></i> </a> </div>
+                                <div class="social-icon"> <a href="#"> <i class="fa-brands fa-github"></i> </a> </div>
+                                <div class="social-icon"> <a href="#"> <i class="fa-solid fa-envelope"></i> </a> </div>
+                                <div class="social-icon"> <a href="#"> <i class="fa-brands fa-whatsapp"></i> </a> </div>
+                            </div>
+
+                            <a href="#"> <button class="btn text-white me-4 mt-3" type="button"> Download Resume <i
+                                        class="fa-solid fa-download ps-2"></i> </button> </a>
+
+                        </div>
+                    </div>
+
+                    <div class="home-img col-12 col-md-4">
+                        <div class="img-box">
+                            <div class="img-item">
+                                <!--<img src="img/IMG_20241126_083000__1_-removebg-preview.png" alt="">-->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <!-- About Me -->
+        <section id="About" class="About-me mt-md-5 px-3 px-md-5">
+
+            <div class="about">
+                <h1 class="text-white text-center py-3 py-md-0"> About <span style="color: #ff2770;"> Me </span> </h1>
+                <p class="pt-md-3 px-md-5"> I'm a Full Stack Developer with expertise in <span>HTML</span>,
+                    <span>CSS</span>, <span>JavaScript</span>, <span>Bootstrap</span>,
+                    <span>SQL</span>, <span>ReactJS</span>, and <span>Figma</span>.
+                    Passionate about building innovative and user-friendly web applications, I thrive on solving
+                    real-world
+                    problems through code. Always eager to expand my knowledge in web development and marketing, I'm
+                    currently seeking opportunities to join a team that values creativity, innovation, and technology.
+                </p>
+
+                <p class="pt-1  px-md-5"> I enjoy collaborating with like-minded professionals to develop scalable and
+                    efficient solutions. My
+                    goal is to continuously improve my skills and stay updated with the latest industry trends. I
+                    believe in
+                    writing clean, maintainable code that enhances user experience and meets business objectives. </p>
+
+                <p class="pt-1  px-md-5"> With a strong foundation in frontend and backend development, I focus on
+                    creating responsive and high-performance applications. I have experience working on dynamic
+                    projects, from company schedule management to student learning platforms. My ability to adapt and
+                    learn quickly allows me to tackle new challenges effectively. </p>
+            </div>
+        </section>
+
+        <!-- Technical Skills -->
+        <section id="Techskills" class="tech-skills px-4 px-md-5 py-5">
+            <h1 class="text-center text-white"> Technical <span style="color: #ff2770;"> Skills </span> </h1>
+
+            <div class="skills mt-5">
+                <div class="skill">
+                    <div>
+                        <img src="img/skill logo 1.png" alt="Html logo" class="pt-2">
+                        <h5 class="text-white text-center pt-3"> HTML </h5>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div>
+                        <img src="img/skill logo 2.png" alt="Html logo" class="pt-2">
+                        <h5 class="text-white text-center pt-3"> CSS </h5>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div>
+                        <img src="img/skill logo 3.png" alt="Html logo" class="pt-2" style="width: 100px">
+                        <h5 class="text-white text-center pt-3"> JS </h5>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div>
+                        <img src="img/skill logo 4.png" alt="Html logo" class="pt-2" style="width: 70px">
+                        <h6 class="text-white text-center pt-3 fs-5rem fs-md-1"> Bootstrap </h6>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div>
+                        <img src="img/skill logo 5.png" alt="Html logo" class="pt-2">
+                        <h5 class="text-white text-center pt-3"> React </h5>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div>
+                        <img src="img/skill logo 6.png" alt="Html logo" class="pt-2">
+                        <h5 class="text-white text-center pt-3"> Python </h5>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div>
+                        <img src="img/skill logo 7.png" alt="Html logo" class="pt-2">
+                        <h5 class="text-white text-center pt-3"> PHP </h5>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div>
+                        <img src="img/skill logo 8.png" alt="Html logo" class="pt-2" style="width: 70px; height: 70px;">
+                        <h6 class="text-white text-center pt-3"> MYSQL </h6>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div>
+                        <img src="img/skill logo 9.png" alt="Html logo" class="pt-2">
+                        <h5 class="text-white text-center pt-3"> Excel </h5>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div>
+                        <img src="img/skill logo 10.png" alt="Html logo" class="pt-2">
+                        <h5 class="text-white text-center pt-3"> Figma </h5>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Skills -->
+        <section class="professional-skills px-3 px-md-5">
+            <h1 class="text-white text-center"> Professional <span style="color: #ff2770;"> Skills </span> </h1>
+
+            <div class="profess-skills py-4">
+                <div class="pro-skill">
+                    <div class="percentage" style="--clr:#06ccff;--num:85;">
+                        <div class="dot"> </div>
+                        <svg>
+                            <circle cx="70" cy="70" r="70"> </circle>
+                            <circle cx="70" cy="70" r="70"> </circle>
+                        </svg>
+                        <div class="number">
+                            <h2> 85% </h2>
+                        </div>
+                    </div>
+                    <h5 class="pt-2" style="color: #06ccff"> Creativity </h5>
+                </div>
+
+                <div class="pro-skill">
+                    <div class="percentage" style="--clr:#06ccff;--num:65;">
+                        <div class="dot"> </div>
+                        <svg>
+                            <circle cx="70" cy="70" r="70"> </circle>
+                            <circle cx="70" cy="70" r="70"> </circle>
+                        </svg>
+                        <div class="number">
+                            <h2> 65% </h2>
+                        </div>
+                    </div>
+                    <h5 class="pt-2" style="color: #06ccff"> Communication </h5>
+                </div>
+
+                <div class="pro-skill">
+                    <div class="percentage" style="--clr:#06ccff;--num:80;">
+                        <div class="dot"> </div>
+                        <svg>
+                            <circle cx="70" cy="70" r="70"> </circle>
+                            <circle cx="70" cy="70" r="70"> </circle>
+                        </svg>
+                        <div class="number">
+                            <h2> 80% </h2>
+                        </div>
+                    </div>
+                    <h5 class="pt-2" style="color: #06ccff"> Problem Solving </h5>
+                </div>
+
+                <div class="pro-skill">
+                    <div class="percentage" style="--clr:#06ccff;--num:82;">
+                        <div class="dot"> </div>
+                        <svg>
+                            <circle cx="70" cy="70" r="70"> </circle>
+                            <circle cx="70" cy="70" r="70"> </circle>
+                        </svg>
+                        <div class="number">
+                            <h2> 82% </h2>
+                        </div>
+                    </div>
+                    <h5 class="pt-2" style="color: #06ccff"> Team Work </h5>
+                </div>
+            </div>
+        </section>
+
+        <!-- MY Services -->
+        <section id="Myservice" class="my-sevices py-5" style="background-color:#242c39;">
+            <h2 class="text-center text-white mb-4">My <span style="color: #ff2770;"> Services </span> </h2>
+            <div class="row container g-4">
+                <div class="col-md-4">
+                    <div class="service-card p-3 shadow">
+                        <div class="text-center icon"> <i class="fa-solid fa-laptop"></i> </div>
+                        <h4 class="text-center pt-2"> Web Development</h4>
+                        <p class="pt-4">I create modern, high-performance, and fully responsive websites using the
+                            latest technologies like HTML, CSS, JavaScript, PHP, and MySQL to deliver seamless user
+                            experiences.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card p-3 shadow">
+                        <div class="text-center icon"> <i class="bi bi-stars"></i> </div>
+                        <h4 class="text-center pt-2">Custom Feature-Packed Websites</h4>
+                        <p class="pt-4">Whether you need smooth animations, advanced functionalities, interactive
+                            elements, or optimized performance, I build tailored solutions to match your exact
+                            requirements.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card p-3 shadow">
+                        <div class="text-center icon"> <i class="bi bi-lightning-fill"></i> </div>
+                        <h4 class="text-center pt-2">Neat & Optimized Code</h4>
+                        <p class="pt-4">I ensure clean, structured, and well-documented code that makes your website run
+                            faster, perform better, and be easy to maintain.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card p-3 shadow">
+                        <div class="text-center icon"> <i class="bi bi-film"></i> </div>
+                        <h4 class="text-center pt-2">Smooth Animations & Interactions</h4>
+                        <p class="pt-4">I add high-quality animations and seamless transitions to make your website more
+                            dynamic and engaging without compromising performance.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card p-3 shadow">
+                        <div class="text-center icon"><i class="bi bi-rocket-takeoff"></i></div>
+                        <h4 class="text-center pt-2">Scalable & Future-Proof Development</h4>
+                        <p class="pt-4">I build websites that are easily upgradable, highly scalable, and ready for
+                            future enhancements, ensuring long-term value for your business.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card p-3 shadow">
+                        <div class="text-center icon"> <i class="bi bi-person-fill-lock"></i> </div>
+                        <h4 class="text-center pt-2">Secure & Reliable Websites</h4>
+                        <p class="pt-4">I ensure that every website I develop follows the best security practices,
+                            protecting user data and providing a reliable experience.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+
+    <script src="script.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"> </script>
+</body>
+
+</html>
