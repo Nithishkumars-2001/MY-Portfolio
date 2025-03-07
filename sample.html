@@ -3,73 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Services</title>
+    <title>Image Rotate with Details</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-        }
-        .service-card {
-            transition: transform 0.3s;
-        }
-        .service-card:hover {
-            transform: scale(1.05);
-        }
-        .icon {
-            font-size: 2rem;
-            color: #007bff;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <section class="container py-5">
-        <h2 class="text-center mb-4">My Services</h2>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card service-card p-3 shadow">
-                    <div class="text-center icon">💻</div>
-                    <h4 class="text-center">Full Stack Web Development</h4>
-                    <p>I create modern, high-performance, and fully responsive websites using the latest technologies like HTML, CSS, JavaScript, PHP, and MySQL to deliver seamless user experiences.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card service-card p-3 shadow">
-                    <div class="text-center icon">✨</div>
-                    <h4 class="text-center">Custom Feature-Packed Websites</h4>
-                    <p>Whether you need smooth animations, advanced functionalities, interactive elements, or optimized performance, I build tailored solutions to match your exact requirements.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card service-card p-3 shadow">
-                    <div class="text-center icon">⚡</div>
-                    <h4 class="text-center">Neat & Optimized Code</h4>
-                    <p>I ensure clean, structured, and well-documented code that makes your website run faster, perform better, and be easy to maintain.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card service-card p-3 shadow">
-                    <div class="text-center icon">🎬</div>
-                    <h4 class="text-center">Smooth Animations & Interactions</h4>
-                    <p>I add high-quality animations and seamless transitions to make your website more dynamic and engaging without compromising performance.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card service-card p-3 shadow">
-                    <div class="text-center icon">🚀</div>
-                    <h4 class="text-center">Scalable & Future-Proof Development</h4>
-                    <p>I build websites that are easily upgradable, highly scalable, and ready for future enhancements, ensuring long-term value for your business.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card service-card p-3 shadow">
-                    <div class="text-center icon">🔒</div>
-                    <h4 class="text-center">Secure & Reliable Websites</h4>
-                    <p>I ensure that every website I develop follows the best security practices, protecting user data and providing a reliable experience.</p>
-                </div>
+    <div class="container text-center mt-5">
+        <h2>Click Image to Rotate & Show Details</h2>
+        <div class="image-container">
+            <img src="https://via.placeholder.com/200" alt="Sample Image" class="clickable-img">
+            <div class="details mt-3">
+                <h5>Image Title</h5>
+                <p>Description of the image goes here.</p>
             </div>
         </div>
-    </section>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

@@ -9,3 +9,4 @@ function closenavbar()
 {
     sidenavbar.style.left = "-60%"
 }
+

@@ -7,6 +7,7 @@
 }
 
 /* Navbar */
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -175,7 +176,6 @@
     border-radius: 15px;
     border: 8px solid #1f242d;
     background-color: #1f242d;
-    ;
 }
 
 .home-info h2 span {
@@ -244,6 +244,10 @@
     place-items: center;
 }
 
+.social-icon:hover {
+    border: 2px solid #ff2770;
+}
+
 .home-info button {
     background-color: #ff2770;
     text-shadow: 1px 1px 2px black;
@@ -259,7 +263,7 @@
 
 .About-me {
     width: 100%;
-    height: 100vh;
+    height: auto;
     display: grid;
     place-items: center;
     background-color: #242c39;
@@ -297,8 +301,18 @@
     place-items: center;
     border-radius: 50%;
     animation: bounce 4s ease-in-out infinite;
+    cursor: pointer;
     border: 2px solid rgb(24, 231, 231);
     box-shadow: -4px -4px 8px #ff2770, 4px 4px 8px rgb(24, 231, 231);
+}
+
+.skill:hover {
+    background:
+        linear-gradient(to right, #06ccff 50%, #ff2770 50%) top,
+        linear-gradient(to right, #ff2770 50%, #06ccff 50%) bottom;
+    opacity: 0.8;
+    background-size: 100% 50%;
+    background-repeat: no-repeat;
 }
 
 @keyframes bounce {
@@ -433,10 +447,10 @@
 
 .service-card {
     transition: transform 0.3s;
-    width: auto;
-    height: 320px;
-    border: 2px solid #06ccff;
+    height: auto;
     border-radius: 10px;
+    border: 2px solid #06ccff;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
 }
 
 .service-card h4 {
@@ -457,7 +471,75 @@
     color: #ff2770;
 }
 
+/* MY Project */
+
+.my-project {
+    display: grid;
+    place-items: center;
+}
+
+.project-box {
+    height: auto;
+    background-color: #45f3ff;
+    opacity: 0.8;
+    margin-top: 20px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    box-shadow: #000 0px 10px 20px, #000 0px 6px 6px;
+    margin-bottom: 40px;
+}
+
+.project-details{
+    width: 100%;
+    height: 120px;
+    overflow: scroll;
+}
+
+.project-details h6{
+    text-align: justify;
+}
+
+.project-details::-webkit-scrollbar {
+    display: none;
+}
+
+.project-box img {
+    margin-top: -100px;
+    width: 90%;
+    height: 170px;
+    border-radius: 20px;
+    background-color: #06ccff;
+}
+
+.view-btn, .buy-btn{
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ff2770;
+    color: #fff;
+    font-size: 16px;
+    display: grid;
+    place-items: center;
+    margin-top: 10px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.view-btn:hover, .buy-btn:hover{
+    border: 2px solid #ffffff;
+    background-color: #ff007b;
+}
+
+.view-btn h6, .buy-btn h6 i{
+    display: grid;
+    place-items: center;
+}
+
+
 /*****************************    Media Queries    *********************************/
+
 @media screen and (min-width: 1246px) {
 
     /* Technical Skills */
@@ -519,8 +601,8 @@
 
 @media screen and (max-width: 468px) {
     .home-img .img-box .img-item {
-        width: 70vw;
-        height: 70vw;
+        width: 75vw;
+        height: 75vw;
     }
 
     /* Technical Skills */
