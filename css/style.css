@@ -546,12 +546,14 @@
     margin-top: 10px;
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border: 2px solid #ffffff;
 }
 
 .view-btn:hover,
 .buy-btn:hover {
-    border: 2px solid #ffffff;
-    background-color: #ff007b;
+    border: 2px solid #ff007b;
+    background-color: #fff;
+    color: #ff007b;
 }
 
 .view-btn h6,
@@ -559,6 +561,97 @@
     display: grid;
     place-items: center;
 }
+
+/* Contact */
+
+.contact-us{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-us h5,.contact-us h6{
+    color: #06ccff;
+    
+}
+
+.contact-us h5 i,.contact-us h6 i{
+    font-size: 25px;
+    color: #ff2770;
+}
+
+/* contact form */
+
+.contact-form {
+    border-radius: 10px;
+    max-width: 720px;
+}
+
+.contact-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-form .form-group {
+    margin-bottom: 15px;
+}
+
+.contact-form label {
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #ff2770;
+}
+
+.contact-form input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid rgb(24, 231, 231);
+    outline: none;
+    color: #fff;
+}
+
+.contact-form textarea::placeholder,
+.contact-form input::placeholder {
+    color: #fff;
+}
+
+.contact-form textarea {
+    background-color: transparent;
+    border: none;
+    border: 2px solid rgb(24, 231, 231);
+    outline: none;
+    color: #fff;
+}
+
+.contact-form button {
+    width: 150px;
+    height: 40px;
+    color: black;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    background: rgb(24, 231, 231);
+}
+
 
 
 /*****************************    Media Queries    *********************************/
@@ -620,7 +713,6 @@
     }
 
 }
-
 
 @media screen and (max-width: 468px) {
     .home-img .img-box .img-item {
