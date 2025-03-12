@@ -10,7 +10,7 @@ function closenavbar()
     sidenavbar.style.left = "-60%"
 }
 
-/*
+
 
 document.addEventListener("contextmenu", function (event) {
     event.preventDefault(); // Disable right-click
@@ -27,4 +27,13 @@ document.addEventListener("keydown", function (event) {
     }
 });
 
-*/
+//Dounload resume
+
+document.getElementById("downloadBtn").addEventListener("click", function () {
+    const a = document.createElement("a");
+    a.href = "Nithishkumar_resume.pdf"; 
+    a.download = "Nithishkumar_resume.pdf";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+});
