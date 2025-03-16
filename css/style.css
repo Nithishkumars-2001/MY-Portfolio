@@ -652,6 +652,23 @@
     background: rgb(24, 231, 231);
 }
 
+/* Copy Rights */
+
+.copy-rights{
+    display: flex;
+    justify-content: space-between;
+    background-color: #20293b;
+}
+
+.up-btn{
+    transform: rotate(270deg);
+    cursor: pointer;
+}
+
+.up-btn i{
+    font-size: 25px;
+    color: #06ccff;
+}
 
 
 /*****************************    Media Queries    *********************************/
@@ -678,6 +695,10 @@
     }
 
     .navbar-menu {
+        display: none;
+    }
+
+    .text-me{
         display: none;
     }
 }
