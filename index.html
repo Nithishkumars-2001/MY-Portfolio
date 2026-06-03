@@ -584,54 +584,6 @@
             transform: translateY(-7px) rotate(-45deg)
         }
 
-        .mob-menu {
-            position: fixed;
-            inset: 0;
-            top: 68px;
-            background: var(--white);
-            z-index: 850;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 28px;
-            transform: translateX(100%);
-            transition: transform .45s cubic-bezier(.4, 0, .2, 1)
-        }
-
-        .mob-menu.open {
-            transform: translateX(0)
-        }
-
-        .mob-menu a {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 52px;
-            color: var(--black);
-            text-decoration: none;
-            transition: color .3s
-        }
-
-        .mob-menu a:hover {
-            color: var(--red)
-        }
-
-        .mob-resume-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 14px 32px;
-            background: var(--red);
-            color: var(--white) !important;
-            font-family: 'Outfit', sans-serif;
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            text-decoration: none;
-            border: none;
-            margin-top: 8px;
-        }
-
         @media (max-width:1024px) {
             #topnav {
                 left: 0;
@@ -648,6 +600,206 @@
 
             .tn-ham {
                 display: flex
+            }
+        }
+
+        /* ══ MOBILE SIDEBAR ══ */
+
+        .mob-menu {
+            position: fixed;
+            inset: 0;
+            top: 0;
+            left: auto;
+            width: 320px;
+            background: var(--black) !important;
+            z-index: 9999 !important;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 40px 0;
+            transform: translateX(100%);
+            transition: transform .45s cubic-bezier(.4, 0, .2, 1);
+            box-shadow: -10px 0 40px rgba(0, 0, 0, 0.4);
+            border-left: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .mob-menu.open {
+            transform: translateX(0);
+        }
+
+        .mob-bg-lines {
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(255, 255, 255, .015) 8px, rgba(255, 255, 255, .015) 9px);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .mob-drawer-header {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            padding: 0 32px 24px 32px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            margin-bottom: 24px;
+        }
+
+        .mob-drawer-logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 28px;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .mob-drawer-logo span {
+            color: var(--red);
+        }
+
+        .mob-links-container {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            width: 100%;
+            flex-grow: 1;
+            padding: 0 16px;
+        }
+
+        .mob-link-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 14px 20px;
+            text-decoration: none;
+            color: var(--g400);
+            font-family: 'Outfit', sans-serif;
+            font-size: 13px !important;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: relative;
+            border-radius: 4px;
+            transition: color .3s, background .3s;
+            width: 100%;
+        }
+
+        .mob-link-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10%;
+            bottom: 10%;
+            width: 3px;
+            background: var(--red);
+            transform: scaleY(0);
+            transition: transform .3s cubic-bezier(.4, 0, .2, 1);
+        }
+
+        .mob-link-item:hover,
+        .mob-link-item.active {
+            color: var(--white) !important;
+            background: rgba(255, 255, 255, .05);
+        }
+
+        .mob-link-item:hover::before,
+        .mob-link-item.active::before {
+            transform: scaleY(1);
+        }
+
+        .mob-link-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--g400);
+            transition: color 0.3s, transform 0.3s;
+            flex-shrink: 0;
+        }
+
+        .mob-link-icon i,
+        .mob-link-icon svg {
+            font-size: 16px;
+        }
+
+        .mob-link-item:hover .mob-link-icon,
+        .mob-link-item.active .mob-link-icon {
+            color: var(--red);
+            transform: scale(1.1);
+        }
+
+        .mob-drawer-footer {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            padding: 24px 32px 12px 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .mob-social-grid {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .mob-social-btn {
+            width: 42px;
+            height: 42px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 4px;
+            color: var(--g400);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .mob-social-btn:hover {
+            background: rgba(232, 0, 29, 0.1);
+            border-color: var(--red);
+            color: var(--white) !important;
+            transform: translateY(-3px);
+        }
+
+        .mob-resume-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 24px;
+            background: var(--red);
+            color: var(--white) !important;
+            font-family: 'Outfit', sans-serif;
+            font-size: 11px !important;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: none;
+            margin-top: 0;
+            width: 100%;
+            box-shadow: 0 4px 14px rgba(232, 0, 29, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .mob-resume-btn:hover {
+            background: var(--red-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(232, 0, 29, 0.35);
+        }
+
+        @media (max-width: 768px) {
+            .mob-menu {
+                top: 0;
+                height: 100vh;
             }
         }
 
@@ -2928,7 +3080,7 @@
     </nav>
 
     <!-- Mobile Sidebar -->
-    <div class="mob-menu" id="mobMenu">
+    <!--<div class="mob-menu" id="mobMenu">
         <a href="#home" class="m-link">HOME</a>
         <a href="#about" class="m-link">ABOUT</a>
         <a href="#skills" class="m-link">SKILLS</a>
@@ -2944,6 +3096,62 @@
             </svg>
             Download Resume
         </a>
+    </div> -->
+
+    <div class="mob-menu" id="mobMenu">
+        <div class="mob-bg-lines"></div>
+
+        <div class="mob-drawer-header">
+            <a href="#home" class="mob-drawer-logo">NITHISH<span>.</span></a>
+        </div>
+
+        <div class="mob-links-container">
+            <a href="#home" class="mob-link-item active">
+                <span class="mob-link-icon"><i class="fa-solid fa-house"></i></span>
+                Home
+            </a>
+            <a href="#about" class="mob-link-item">
+                <span class="mob-link-icon"><i class="fa-solid fa-user"></i></span>
+                About
+            </a>
+            <a href="#skills" class="mob-link-item">
+                <span class="mob-link-icon"><i class="fa-solid fa-code"></i></span>
+                Skills
+            </a>
+            <a href="#projects" class="mob-link-item">
+                <span class="mob-link-icon"><i class="fa-solid fa-briefcase"></i></span>
+                Projects
+            </a>
+            <a href="#experience" class="mob-link-item">
+                <span class="mob-link-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                Experience
+            </a>
+            <a href="#contact" class="mob-link-item">
+                <span class="mob-link-icon"><i class="fa-solid fa-envelope"></i></span>
+                Contact
+            </a>
+        </div>
+
+        <div class="mob-drawer-footer">
+            <div class="mob-social-grid">
+                <a href="https://github.com/" target="_blank" class="mob-social-btn" aria-label="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://instagram.com/" target="_blank" class="mob-social-btn" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://linkedin.com/" target="_blank" class="mob-social-btn" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="https://wa.me/917010234587" target="_blank" class="mob-social-btn" aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+
+            <a href="resume.pdf" target="_blank" class="mob-resume-btn">
+                <i class="bi bi-file-earmark-pdf"></i> Resume
+            </a>
+        </div>
     </div>
 
     <main>
@@ -3054,7 +3262,8 @@
                             Developer, I manage end-to-end product delivery — from domain setup and professional email
                             architecture to cPanel deployment and database integration. I am also deeply invested in
                             <span class="r">UI/UX Design</span>, <span class="r">Digital Marketing</span>, and <span
-                                class="r">SEO strategies</span> that drive real results.</p>
+                                class="r">SEO strategies</span> that drive real results.
+                        </p>
                         <p>I thrive in collaborative environments and am always eager to take on challenging projects
                             that push my technical and creative limits. I am actively seeking opportunities to grow,
                             contribute, and build solutions that truly matter.</p>
@@ -3700,7 +3909,7 @@
 
         <div class="ft-inner">
             <div class="ft-copy">
-                &copy; 2026 <strong>Nithish Kumar</strong>. All Rights Reserved. 
+                &copy; 2026 <strong>Nithish Kumar</strong>. All Rights Reserved.
             </div>
 
             <div class="ft-meta">
