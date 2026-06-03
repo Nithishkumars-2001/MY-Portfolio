@@ -1318,7 +1318,7 @@
 
         .prof-wrap {
             position: relative;
-            width: clamp(260px, 28vw, 380px);
+            width: clamp(280px, 28vw, 400px);
             aspect-ratio: 0.82 / 1;
             border-radius: 16px;
             overflow: hidden;
@@ -1579,6 +1579,29 @@
                 right: 10%;
                 top: 85%
             }
+        }
+
+        @media (max-width:1024px) {
+            .prof-badge {
+                left: -24px;
+                bottom: 30px;
+                padding: 16px 20px;
+                min-width: 120px;
+            }
+
+            .pb-num {
+                font-size: 20px;
+            }
+
+            .pb-txt {
+                font-size: 10px;
+            }
+
+            .hero-rotate-badge {
+                right: -5px;
+                top: 75%;
+            }
+
         }
 
         /* ══ ABOUT SECTION ══ */
@@ -3204,7 +3227,7 @@
                             <div class="prof-bg"></div>
                             <div class="prof-bg-lines"></div>
                             <div class="prof-img-area">
-                                <img src="my_image.jpeg" alt="Nithish Kumar"
+                                <img src="#" alt="Nithish Kumar"
                                     onerror="this.style.display='none'; document.getElementById('ph').style.display='flex';" />
                                 <div class="prof-placeholder" id="ph">
                                     <div class="prof-silhouette">
