@@ -13,13 +13,18 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@200;300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@200;300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
     <!-- Css -->
@@ -305,30 +310,89 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 12px;
+            gap: 4px;
             width: 100%;
-            padding: 0 16px
+            padding: 0 8px;
         }
 
-        .sn-social {
-            width: 20px;
-            height: 20px;
-            background-color: transparent;
-            border: none;
+        .sn-social-wrap {
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 10px 20px;
+            text-decoration: none;
             color: var(--g400);
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            white-space: nowrap;
+            overflow: hidden;
+            transition: color .3s, background .3s;
+            border-radius: 0;
+        }
+
+        .sn-social-wrap::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--red);
+            transform: scaleY(0);
+            transition: transform .3s cubic-bezier(.4, 0, .2, 1);
+        }
+
+        .sn-social-wrap:hover {
+            color: var(--white);
+            background: rgba(255, 255, 255, .05);
+        }
+
+        .sn-social-wrap:hover::before {
+            transform: scaleY(1);
+        }
+
+        .sn-social-wrap .sn-social-icon {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 12px;
-            text-decoration: none;
-            transition: border-color .3s, color .3s, background .3s;
-            border-radius: 2px;
-            margin-bottom: 10px;
+            font-size: 14px;
+            transition: transform 0.3s ease, color .3s;
         }
 
-        .sn-social:hover {
+        .sn-social-wrap:hover .sn-social-icon {
+            transform: scale(1.15);
             color: var(--red);
-            background: rgba(232, 0, 29, .1)
+        }
+
+        .sn-social-wrap .sn-social-icon svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .sn-social-label {
+            opacity: 0;
+            font-family: 'Outfit', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: opacity .25s .1s;
+            white-space: nowrap;
+        }
+
+        #sidenav:hover .sn-social-label {
+            opacity: 1;
+        }
+
+        .sn-social {
+            display: none;
         }
 
         @media (max-width:1024px) {
@@ -376,7 +440,38 @@
         .tn-right-wrap {
             display: flex;
             align-items: center;
-            gap: 40px;
+            gap: 16px;
+        }
+
+        .tn-resume {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 42px;
+            padding: 0 20px;
+            background: transparent;
+            color: var(--black);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 1.5px solid var(--g200);
+            gap: 7px;
+            transition: border-color .3s, color .3s, background .3s;
+            white-space: nowrap;
+        }
+
+        .tn-resume:hover {
+            border-color: var(--red);
+            color: var(--red);
+            background: rgba(232, 0, 29, .04);
+        }
+
+        @media (max-width: 1024px) {
+            .tn-resume {
+                display: none;
+            }
         }
 
         .tn-links {
@@ -518,6 +613,23 @@
 
         .mob-menu a:hover {
             color: var(--red)
+        }
+
+        .mob-resume-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 32px;
+            background: var(--red);
+            color: var(--white) !important;
+            font-family: 'Outfit', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: none;
+            margin-top: 8px;
         }
 
         @media (max-width:1024px) {
@@ -1356,21 +1468,22 @@
         }
 
         .about-code-card {
-            background: var(--black);
+            background: var(--g100);
+            border: 1px solid var(--g200);
             padding: 24px 28px;
             font-family: 'DM Mono', monospace;
-            font-size: 13px;
+            font-size: 12.5px;
             line-height: 1.9;
-            color: rgba(255, 255, 255, .5);
+            color: var(--g600);
             border-left: 3px solid var(--red);
             margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
             transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
 
         .about-code-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 15px 35px rgba(232, 0, 29, 0.1);
+            box-shadow: 0 12px 28px rgba(232, 0, 29, 0.08);
         }
 
         .cc-ln {
@@ -1378,7 +1491,7 @@
         }
 
         .cc-k {
-            color: #ff7e8e
+            color: #c0392b
         }
 
         .cc-s {
@@ -1386,17 +1499,54 @@
         }
 
         .cc-v {
-            color: #a8d8a8
+            color: #27ae60
         }
 
         .cc-c {
-            color: var(--g600)
+            color: var(--g400)
         }
 
         .about-facts {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 12px
+        }
+
+        .about-personal-facts {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: 28px;
+            padding-top: 24px;
+            border-top: 1px solid var(--g200);
+        }
+
+        .apf-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+
+        .apf-icon {
+            font-size: 18px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .apf-label {
+            font-family: 'DM Mono', monospace;
+            font-size: 9px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--g400);
+            margin-bottom: 3px;
+        }
+
+        .apf-val {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--txt);
+            line-height: 1.5;
         }
 
         .af-item {
@@ -1553,15 +1703,15 @@
         /* ══ EXPERIENCE SECTION ══ */
 
         #experience {
-            background: var(--black)
+            background: var(--off)
         }
 
         #experience .sec-title {
-            color: var(--white)
+            color: var(--black)
         }
 
         #experience .sec-ghost {
-            color: rgba(255, 255, 255, .025)
+            color: rgba(0, 0, 0, .04)
         }
 
         .exp-grid {
@@ -1570,12 +1720,18 @@
             gap: 32px
         }
 
+        @media (max-width:568px) {
+            .exp-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
         .exp-card {
             padding: 40px 36px;
-            border: 1px solid rgba(255, 255, 255, .07);
+            border: 1px solid var(--g200);
             position: relative;
             overflow: hidden;
-            background: rgba(255, 255, 255, 0.01);
+            background: var(--white);
             transition: border-color .35s, transform .4s cubic-bezier(.16, 1, .3, 1), box-shadow .35s, background .35s;
         }
 
@@ -1593,10 +1749,10 @@
         }
 
         .exp-card:hover {
-            border-color: rgba(232, 0, 29, .35);
+            border-color: rgba(232, 0, 29, .2);
             transform: translateY(-6px);
-            background: rgba(255, 255, 255, 0.02);
-            box-shadow: 0 24px 48px rgba(232, 0, 29, .15)
+            background: var(--white);
+            box-shadow: 0 24px 48px rgba(232, 0, 29, .08)
         }
 
         .exp-card:hover::before {
@@ -1608,7 +1764,7 @@
             align-items: center;
             gap: 8px;
             padding: 5px 12px;
-            background: rgba(232, 0, 29, .12);
+            background: rgba(232, 0, 29, .08);
             font-family: 'DM Mono', monospace;
             font-size: 10px;
             letter-spacing: 2px;
@@ -1629,7 +1785,7 @@
         .exp-role {
             font-family: 'Bebas Neue', sans-serif;
             font-size: 32px;
-            color: var(--white);
+            color: var(--black);
             letter-spacing: .5px;
             margin-bottom: 6px;
             line-height: 1
@@ -1644,7 +1800,7 @@
 
         .exp-desc {
             font-size: 14px;
-            color: #b0aba6;
+            color: var(--g600);
             line-height: 1.8;
             margin-bottom: 22px;
             font-weight: 300
@@ -1658,7 +1814,7 @@
 
         .et {
             padding: 4px 11px;
-            border: 1px solid rgba(232, 0, 29, .25);
+            border: 1px solid rgba(232, 0, 29, .2);
             font-size: 10px;
             font-family: 'DM Mono', monospace;
             color: var(--red);
@@ -1667,8 +1823,8 @@
         }
 
         .exp-card:hover .et {
-            background: rgba(232, 0, 29, 0.1);
-            color: var(--white);
+            background: rgba(232, 0, 29, 0.08);
+            color: var(--red);
             border-color: var(--red);
         }
 
@@ -2157,15 +2313,15 @@
         /* ══ CONTACT SECTION ══ */
 
         #contact {
-            background: var(--black)
+            background: var(--off)
         }
 
         #contact .sec-title {
-            color: var(--white)
+            color: var(--black)
         }
 
         #contact .sec-ghost {
-            color: rgba(255, 255, 255, .02)
+            color: rgba(0, 0, 0, .03)
         }
 
         .contact-layout {
@@ -2178,7 +2334,7 @@
         .contact-heading {
             font-family: 'Bebas Neue', sans-serif;
             font-size: clamp(32px, 3.5vw, 52px);
-            color: var(--white);
+            color: var(--black);
             line-height: 1.05;
             margin-bottom: 28px
         }
@@ -2190,7 +2346,7 @@
         .contact-blurb {
             font-size: 15px;
             font-weight: 300;
-            color: var(--g400);
+            color: var(--g600);
             line-height: 1.8;
             margin-bottom: 36px
         }
@@ -2200,9 +2356,9 @@
             align-items: center;
             gap: 18px;
             padding: 18px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, .06);
+            border-bottom: 1px solid var(--g200);
             text-decoration: none;
-            color: var(--white);
+            color: var(--black);
             transition: padding-left .4s cubic-bezier(.16, 1, .3, 1), border-color 0.3s;
         }
 
@@ -2214,8 +2370,8 @@
         .clink-icon {
             width: 42px;
             height: 42px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: var(--white);
+            border: 1px solid var(--g200);
             color: var(--g400);
             display: flex;
             align-items: center;
@@ -2223,6 +2379,7 @@
             font-size: 16px;
             border-radius: 4px;
             transition: background .3s, color .3s, border-color .3s, transform .3s;
+            flex-shrink: 0;
         }
 
         .clink:hover .clink-icon {
@@ -2248,64 +2405,69 @@
 
         .clink-val {
             font-size: 16px;
-            font-weight: 400
+            font-weight: 400;
+            color: var(--black);
         }
 
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 24px
+        /* Contact Form — fully Bootstrap-powered, light theme */
+        .contact-form-card {
+            background: var(--white);
+            border: 1px solid var(--g200);
+            border-radius: 4px;
+            padding: 36px 32px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, .04);
         }
 
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px
-        }
-
-        .fgrp {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            position: relative
-        }
-
-        .fgrp label {
+        .cf-label {
             font-family: 'DM Mono', monospace;
             font-size: 10px;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            color: var(--g400);
-            transition: color 0.3s;
+            color: var(--g600);
+            margin-bottom: 6px;
+            display: block;
+            font-weight: 500;
         }
 
-        .fgrp input,
-        .fgrp textarea {
-            background: rgba(255, 255, 255, .02);
-            border: 1px solid rgba(255, 255, 255, .1);
-            padding: 14px 18px;
-            color: var(--white);
+        .cf-control {
+            display: block;
+            width: 100%;
+            padding: 13px 16px;
             font-family: 'Outfit', sans-serif;
             font-size: 14px;
+            font-weight: 400;
+            color: var(--txt);
+            background-color: var(--white);
+            background-clip: padding-box;
+            border: 1.5px solid var(--g200);
+            border-radius: 3px;
             outline: none;
-            border-radius: 2px;
-            transition: border-color .3s, background .3s, box-shadow .3s
+            transition: border-color .3s, box-shadow .3s;
+            -webkit-appearance: none;
+            appearance: none;
         }
 
-        .fgrp input:focus,
-        .fgrp textarea:focus {
+        .cf-control::placeholder {
+            color: var(--g400);
+            font-size: 13px;
+        }
+
+        .cf-control:focus {
             border-color: var(--red);
-            background: rgba(255, 255, 255, .04);
-            box-shadow: 0 0 12px rgba(232, 0, 29, 0.15);
+            box-shadow: 0 0 0 3px rgba(232, 0, 29, .08);
         }
 
-        .fgrp input:focus+label,
-        .fgrp textarea:focus+label {
+        .cf-control:focus+.cf-label {
             color: var(--red);
         }
 
+        textarea.cf-control {
+            resize: vertical;
+            min-height: 130px;
+        }
+
         .btn-send {
-            padding: 16px 36px;
+            padding: 15px 36px;
             background: var(--red);
             color: var(--white);
             border: none;
@@ -2318,11 +2480,12 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            cursor: none;
+            cursor: pointer;
             position: relative;
             overflow: hidden;
-            align-self: flex-start;
-            transition: transform .3s cubic-bezier(.16, 1, .3, 1), box-shadow .3s, background .3s;
+            width: 100%;
+            border-radius: 3px;
+            transition: transform .3s cubic-bezier(.16, 1, .3, 1), box-shadow .3s;
         }
 
         .btn-send::before {
@@ -2336,7 +2499,7 @@
 
         .btn-send:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 24px rgba(232, 0, 29, 0.35);
+            box-shadow: 0 10px 24px rgba(232, 0, 29, 0.3);
         }
 
         .btn-send:hover::before {
@@ -2348,21 +2511,169 @@
             z-index: 1
         }
 
-        @media (max-width:768px) {
-
-            .form-row {
-                grid-template-columns: 1fr
+        @media (max-width: 1024px) {
+            .contact-layout {
+                grid-template-columns: 1fr;
+                gap: 48px
             }
         }
 
         /* ══ FOOTER ══ */
 
         footer {
-            background: #040404;
-            padding: 48px 64px;
-            border-top: 1px solid rgba(255, 255, 255, .04);
+            background: var(--g100);
+            border-top: 2px solid var(--g200);
             color: var(--g600);
-            font-size: 13px
+            font-size: 13px;
+        }
+
+        .ft-top {
+            max-width: 1160px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.8fr 1fr 1fr 1.4fr;
+            gap: 48px;
+            padding: 72px 64px 56px;
+        }
+
+        .ft-logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 28px;
+            color: var(--black);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 14px;
+        }
+
+        .ft-logo span {
+            color: var(--red);
+        }
+
+        .ft-tagline {
+            font-size: 13px;
+            font-weight: 300;
+            color: var(--g600);
+            line-height: 1.8;
+            margin-bottom: 24px;
+            max-width: 280px;
+        }
+
+        .ft-socials {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .ft-social-btn {
+            width: 36px;
+            height: 36px;
+            background: var(--white);
+            border: 1px solid var(--g200);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--g600);
+            text-decoration: none;
+            transition: background .3s, color .3s, border-color .3s, transform .3s;
+        }
+
+        .ft-social-btn:hover {
+            background: var(--red);
+            color: var(--white);
+            border-color: var(--red);
+            transform: translateY(-3px);
+        }
+
+        .ft-col-title {
+            font-family: 'DM Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--black);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .ft-link-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .ft-link-list a {
+            font-size: 13px;
+            color: var(--g600);
+            text-decoration: none;
+            transition: color .3s, padding-left .3s;
+            display: inline-block;
+        }
+
+        .ft-link-list a:hover {
+            color: var(--red);
+            padding-left: 6px;
+        }
+
+        .ft-contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .ft-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 13px;
+            color: var(--g600);
+        }
+
+        .ft-ci-icon {
+            font-size: 14px;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .ft-contact-item a {
+            color: var(--g600);
+            text-decoration: none;
+            transition: color .3s;
+        }
+
+        .ft-contact-item a:hover {
+            color: var(--red);
+        }
+
+        .ft-resume-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 11px 22px;
+            background: transparent;
+            border: 1.5px solid var(--red);
+            color: var(--red);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background .3s, color .3s;
+        }
+
+        .ft-resume-btn:hover {
+            background: var(--red);
+            color: var(--white);
+        }
+
+        .ft-divider {
+            max-width: 1160px;
+            margin: 0 auto;
+            height: 1px;
+            background: var(--g200);
+            margin-left: 64px;
+            margin-right: 64px;
         }
 
         .ft-inner {
@@ -2370,27 +2681,85 @@
             margin: 0 auto;
             display: flex;
             align-items: center;
-            justify-content: space-between
+            justify-content: space-between;
+            padding: 20px 64px 32px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .ft-copy {
+            font-size: 13px;
+            color: var(--g600);
         }
 
         .ft-copy strong {
-            color: var(--g400);
-            font-weight: 500
+            color: var(--g600);
+            font-weight: 600;
         }
 
-        @media (max-width:1024px) {
+        .ft-badges {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
 
-            footer {
-                padding: 32px
+        .ft-badge {
+            padding: 4px 12px;
+            background: var(--white);
+            border: 1px solid var(--g200);
+            font-family: 'DM Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 1px;
+            color: var(--g600);
+        }
+
+        .ft-meta {
+            font-size: 12px;
+            color: var(--g400);
+        }
+
+        @media (max-width: 1024px) {
+            .ft-top {
+                grid-template-columns: 1fr 1fr;
+                gap: 36px;
+                padding: 48px 32px 40px;
+            }
+
+            .ft-divider {
+                margin-left: 32px;
+                margin-right: 32px;
+            }
+
+            .ft-inner {
+                padding: 20px 32px 28px;
             }
         }
 
-        @media (max-width:768px) {
+        @media (max-width: 768px) {
+            .ft-top {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                padding: 40px 24px 32px;
+            }
+
+            .ft-tagline {
+                max-width: 100%;
+            }
+
+            .ft-divider {
+                margin-left: 24px;
+                margin-right: 24px;
+            }
 
             .ft-inner {
                 flex-direction: column;
                 gap: 16px;
-                text-align: center
+                text-align: center;
+                padding: 20px 24px 28px;
+            }
+
+            .ft-badges {
+                justify-content: center;
             }
         }
     </style>
@@ -2475,37 +2844,53 @@
 
         <div class="sn-bottom">
             <!-- GitHub -->
-            <a href="https://github.com/Nithishkumars-2001" target="_blank" class="sn-social" style="width: 25px; height: 25px">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.49
-                    0-.24-.01-1.04-.01-1.89-2.78.62-3.37-1.2-3.37-1.2-.46-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63
-                    1 .07 1.53 1.05 1.53 1.05.89 1.57 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.08
-                    0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 6.84
-                    c.85 0 1.71.12 2.51.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75
-                    0 3.95-2.34 4.82-4.57 5.08.36.32.68.95.68 1.92 0 1.39-.01 2.5-.01 2.84 0 .27.18.6.69.49
-                    A10.25 10.25 0 0 0 22 12.23C22 6.58 17.52 2 12 2z" />
-                </svg>
+            <a href="https://github.com/Nithishkumars-2001" target="_blank" class="sn-social-wrap">
+                <div class="sn-social-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.49
+                        0-.24-.01-1.04-.01-1.89-2.78.62-3.37-1.2-3.37-1.2-.46-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63
+                        1 .07 1.53 1.05 1.53 1.05.89 1.57 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.08
+                        0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 6.84
+                        c.85 0 1.71.12 2.51.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75
+                        0 3.95-2.34 4.82-4.57 5.08.36.32.68.95.68 1.92 0 1.39-.01 2.5-.01 2.84 0 .27.18.6.69.49
+                        A10.25 10.25 0 0 0 22 12.23C22 6.58 17.52 2 12 2z" />
+                    </svg>
+                </div>
+                <span class="sn-social-label">GitHub</span>
             </a>
 
             <!-- Linkedin -->
-            <a href="https://www.linkedin.com/in/nithishkumar19/" target="_blank" class="sn-social">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.48 1s2.5 1.12 2.5 2.5zM.5 8h4V24h-4V8zm7.5 0h3.84v2.16h.05c.53-1.01 1.84-2.16 3.79-2.16 4.05 0 4.8 2.67 4.8 6.14V24h-4v-7.08c0-1.69-.03-3.86-2.35-3.86-2.35 0-2.71 1.84-2.71 3.74V24h-4V8z" />
-                </svg>
+            <a href="https://www.linkedin.com/in/nithishkumar19/" target="_blank" class="sn-social-wrap">
+                <div class="sn-social-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.48 1s2.5 1.12 2.5 2.5zM.5 8h4V24h-4V8zm7.5 0h3.84v2.16h.05c.53-1.01 1.84-2.16 3.79-2.16 4.05 0 4.8 2.67 4.8 6.14V24h-4v-7.08c0-1.69-.03-3.86-2.35-3.86-2.35 0-2.71 1.84-2.71 3.74V24h-4V8z" />
+                    </svg>
+                </div>
+                <span class="sn-social-label">LinkedIn</span>
             </a>
 
             <!-- Instagram -->
-            <a href="https://www.instagram.com/_._n.i.t.h.i.s.h_k.u.m.a.r_._?igsh=MXV0cWFteTgzdGlrbg==" target="_blank" class="sn-social">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M7.75 2C4.57 2 2 4.57 2 7.75v8.5C2 19.43 4.57 22 7.75 22h8.5C19.43 22 22 19.43 22 16.25v-8.5C22 4.57 19.43 2 16.25 2h-8.5zm0 2h8.5A3.75 3.75 0 0 1 20 7.75v8.5A3.75 3.75 0 0 1 16.25 20h-8.5A3.75 3.75 0 0 1 4 16.25v-8.5A3.75 3.75 0 0 1 7.75 4zm8.75 1a1.25 1.25 0 1 0 0 2.5A1.25 1.25 0 0 0 16.5 5zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z" />
-                </svg>
+            <a href="https://www.instagram.com/_._n.i.t.h.i.s.h_k.u.m.a.r_._?igsh=MXV0cWFteTgzdGlrbg==" target="_blank"
+                class="sn-social-wrap">
+                <div class="sn-social-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M7.75 2C4.57 2 2 4.57 2 7.75v8.5C2 19.43 4.57 22 7.75 22h8.5C19.43 22 22 19.43 22 16.25v-8.5C22 4.57 19.43 2 16.25 2h-8.5zm0 2h8.5A3.75 3.75 0 0 1 20 7.75v8.5A3.75 3.75 0 0 1 16.25 20h-8.5A3.75 3.75 0 0 1 4 16.25v-8.5A3.75 3.75 0 0 1 7.75 4zm8.75 1a1.25 1.25 0 1 0 0 2.5A1.25 1.25 0 0 0 16.5 5zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z" />
+                    </svg>
+                </div>
+                <span class="sn-social-label">Instagram</span>
             </a>
 
             <!-- Whatsapp -->
-            <a href="https://wa.me/917010234587" target="_blank" class="sn-social">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M20.52 3.48A11.88 11.88 0 0 0 12.04 0C5.42 0 .04 5.38.04 12c0 2.11.55 4.17 1.59 5.99L0 24l6.17-1.62A11.95 11.95 0 0 0 12.04 24c6.62 0 12-5.38 12-12 0-3.2-1.25-6.21-3.52-8.52zM12.04 21.82c-1.8 0-3.56-.48-5.1-1.39l-.36-.21-3.66.96.98-3.57-.24-.37a9.78 9.78 0 0 1-1.5-5.24c0-5.42 4.41-9.84 9.84-9.84 2.63 0 5.1 1.02 6.96 2.88a9.79 9.79 0 0 1 2.88 6.96c0 5.43-4.41 9.84-9.8 9.84zm5.39-7.36c-.29-.15-1.71-.84-1.97-.94-.27-.1-.46-.15-.65.15-.19.29-.75.94-.92 1.13-.17.19-.34.22-.63.07-.29-.15-1.23-.45-2.34-1.43-.86-.77-1.44-1.72-1.61-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.65-1.56-.9-2.14-.24-.57-.48-.49-.65-.5h-.56c-.19 0-.5.07-.77.36-.27.29-1.02 1-1.02 2.43s1.04 2.82 1.19 3.01c.15.19 2.04 3.11 4.95 4.36.69.3 1.24.48 1.67.62.7.22 1.33.19 1.83.12.56-.08 1.71-.7 1.95-1.37.24-.67.24-1.25.17-1.37-.07-.12-.26-.19-.55-.34z" />
-                </svg>
+            <a href="https://wa.me/917010234587" target="_blank" class="sn-social-wrap">
+                <div class="sn-social-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M20.52 3.48A11.88 11.88 0 0 0 12.04 0C5.42 0 .04 5.38.04 12c0 2.11.55 4.17 1.59 5.99L0 24l6.17-1.62A11.95 11.95 0 0 0 12.04 24c6.62 0 12-5.38 12-12 0-3.2-1.25-6.21-3.52-8.52zM12.04 21.82c-1.8 0-3.56-.48-5.1-1.39l-.36-.21-3.66.96.98-3.57-.24-.37a9.78 9.78 0 0 1-1.5-5.24c0-5.42 4.41-9.84 9.84-9.84 2.63 0 5.1 1.02 6.96 2.88a9.79 9.79 0 0 1 2.88 6.96c0 5.43-4.41 9.84-9.8 9.84zm5.39-7.36c-.29-.15-1.71-.84-1.97-.94-.27-.1-.46-.15-.65.15-.19.29-.75.94-.92 1.13-.17.19-.34.22-.63.07-.29-.15-1.23-.45-2.34-1.43-.86-.77-1.44-1.72-1.61-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.65-1.56-.9-2.14-.24-.57-.48-.49-.65-.5h-.56c-.19 0-.5.07-.77.36-.27.29-1.02 1-1.02 2.43s1.04 2.82 1.19 3.01c.15.19 2.04 3.11 4.95 4.36.69.3 1.24.48 1.67.62.7.22 1.33.19 1.83.12.56-.08 1.71-.7 1.95-1.37.24-.67.24-1.25.17-1.37-.07-.12-.26-.19-.55-.34z" />
+                    </svg>
+                </div>
+                <span class="sn-social-label">WhatsApp</span>
             </a>
         </div>
     </nav>
@@ -2524,6 +2909,15 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <a href="#contact" class="tn-hire"><span>Hire Me</span></a>
+            <a href="Nithishkumar_Resume.pdf" download class="tn-resume">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                Resume
+            </a>
         </div>
 
         <div class="tn-ham" id="ham">
@@ -2541,6 +2935,15 @@
         <a href="#experience" class="m-link">EXPERIENCE</a>
         <a href="#projects" class="m-link">PROJECTS</a>
         <a href="#contact" class="m-link">CONTACT</a>
+        <a href="Nithish_Kumar_Resume.pdf" download class="mob-resume-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            Download Resume
+        </a>
     </div>
 
     <main>
@@ -2563,7 +2966,8 @@
                         <span class="hn-line"><span>Web Applications.</span></span>
                     </h1>
                     <p class="hero-sub">
-                        Hi, I am <strong>Nithish Kumar</strong>. A dedicated developer focused on delivering high-impact solutions, clean backend performance, and seamless user experiences.
+                        Hi, I am <strong>Nithish Kumar</strong>. A dedicated developer focused on delivering high-impact
+                        solutions, clean backend performance, and seamless user experiences.
                     </p>
 
                     <div class="hero-stats">
@@ -2592,7 +2996,8 @@
                             <div class="prof-bg"></div>
                             <div class="prof-bg-lines"></div>
                             <div class="prof-img-area">
-                                <img src="my_image.jpeg" alt="Nithish Kumar" onerror="this.style.display='none'; document.getElementById('ph').style.display='flex';" />
+                                <img src="my_image.jpeg" alt="Nithish Kumar"
+                                    onerror="this.style.display='none'; document.getElementById('ph').style.display='flex';" />
                                 <div class="prof-placeholder" id="ph">
                                     <div class="prof-silhouette">
                                         <div class="prof-head"></div>
@@ -2610,8 +3015,10 @@
                     <div class="hero-rotate-badge">
                         <div class="rotate-center">⚡</div>
                         <svg class="rotate-text-svg" viewBox="0 0 100 100">
-                            <path id="textPath" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none"></path>
-                            <text font-family="'DM Mono', monospace" font-size="7.5" font-weight="500" fill="#080808" letter-spacing="1.2">
+                            <path id="textPath" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none">
+                            </path>
+                            <text font-family="'DM Mono', monospace" font-size="7.5" font-weight="500" fill="#080808"
+                                letter-spacing="1.2">
                                 <textPath href="#textPath">• NITHISH KUMAR • FULL STACK DEVELOPER </textPath>
                             </text>
                         </svg>
@@ -2635,27 +3042,69 @@
 
                 <div class="about-grid">
                     <div class="about-text rv-l">
-                        <p>I am a highly motivated individual, eager to secure a challenging position in a reputable organization, with a keen interest in contributing innovative ideas and receiving valuable mentorship to propel my career growth.</p>
-                        <p>I am deeply committed to delivering exceptional results through my unwavering dedication and diligent approach, adding substantial value to my perspective employer's objectives while designing and scaling robust web applications.</p>
+                        <p>I am <strong>S. Nithish Kumar</strong>, a passionate Full Stack Web Developer based in <span
+                                class="r">Thanjavur, Tamil Nadu</span>. With over 1.5 years of hands-on industry
+                            experience, I specialise in building responsive, production-ready web applications that
+                            combine clean backend logic with polished user interfaces.</p>
+                        <p>My journey spans across <strong>PHP, MySQL, JavaScript, Bootstrap</strong>, and modern tools
+                            like <strong>React JS</strong>. I have successfully delivered 10+ live applications for
+                            international clients in Malaysia and beyond — from restaurant platforms and e-commerce
+                            solutions to comprehensive business web systems.</p>
+                        <p>Currently working at <strong>Hisho &amp; Kanri Pvt Ltd</strong> as a Full Stack Web
+                            Developer, I manage end-to-end product delivery — from domain setup and professional email
+                            architecture to cPanel deployment and database integration. I am also deeply invested in
+                            <span class="r">UI/UX Design</span>, <span class="r">Digital Marketing</span>, and <span
+                                class="r">SEO strategies</span> that drive real results.</p>
+                        <p>I thrive in collaborative environments and am always eager to take on challenging projects
+                            that push my technical and creative limits. I am actively seeking opportunities to grow,
+                            contribute, and build solutions that truly matter.</p>
                     </div>
 
                     <div class="about-img-block rv-r">
                         <div class="about-code-card">
                             <span class="cc-ln"><span class="cc-k">const</span> fullStackDeveloper = {</span>
                             <span class="cc-ln">&nbsp;&nbsp;name: <span class="cc-s">'S. Nithish Kumar'</span>,</span>
-                            <span class="cc-ln">&nbsp;&nbsp;location: <span class="cc-s">'Thanjavur, Tamil Nadu'</span>,</span>
-                            <span class="cc-ln">&nbsp;&nbsp;interests: [<span class="cc-s">'UI/UX Design'</span>, <span class="cc-s">'Artificial Intelligence'</span>, <span class="cc-s">'Cloud Computing'</span>]</span>
+                            <span class="cc-ln">&nbsp;&nbsp;location: <span class="cc-s">'Thanjavur, Tamil
+                                    Nadu'</span>,</span>
+                            <span class="cc-ln">&nbsp;&nbsp;role: <span class="cc-s">'Full Stack Web
+                                    Developer'</span>,</span>
+                            <span class="cc-ln">&nbsp;&nbsp;experience: <span class="cc-v">'1.5+ years'</span>,</span>
+                            <span class="cc-ln">&nbsp;&nbsp;liveProjects: <span class="cc-v">10</span>,</span>
+                            <span class="cc-ln">&nbsp;&nbsp;stack: [<span class="cc-s">'PHP'</span>, <span
+                                    class="cc-s">'MySQL'</span>, <span class="cc-s">'JS'</span>, <span
+                                    class="cc-s">'React'</span>],</span>
+                            <span class="cc-ln">&nbsp;&nbsp;interests: [<span class="cc-s">'UI/UX Design'</span>,</span>
+                            <span class="cc-ln">&nbsp;&nbsp;&nbsp;&nbsp;<span class="cc-s">'AI &
+                                    Automation'</span>,</span>
+                            <span class="cc-ln">&nbsp;&nbsp;&nbsp;&nbsp;<span class="cc-s">'Cloud
+                                    Computing'</span>],</span>
+                            <span class="cc-ln">&nbsp;&nbsp;languages: [<span class="cc-s">'Tamil'</span>, <span
+                                    class="cc-s">'English'</span>],</span>
+                            <span class="cc-ln">&nbsp;&nbsp;currentCompany: <span class="cc-s">'Hisho & Kanri Pvt
+                                    Ltd'</span>,</span>
+                            <span class="cc-ln">&nbsp;&nbsp;availableFor: <span class="cc-s">'Freelance /
+                                    Full-time'</span>,</span>
+                            <span class="cc-ln">&nbsp;&nbsp;status: <span class="cc-v">true</span> <span class="cc-c">//
+                                    actively hiring</span></span>
                             <span class="cc-ln">};</span>
                         </div>
 
                         <div class="about-facts">
+                            <div class="af-item rv-scale d3">
+                                <div class="af-lbl">Availability</div>
+                                <div class="af-val">Open to Opportunities</div>
+                            </div>
+                            <div class="af-item rv-scale d4">
+                                <div class="af-lbl">Specialisation</div>
+                                <div class="af-val">Responsive Web Apps</div>
+                            </div>
                             <div class="af-item rv-scale d1">
                                 <div class="af-lbl">Additional Skills</div>
                                 <div class="af-val">Requirement Analysis</div>
                             </div>
                             <div class="af-item rv-scale d2">
                                 <div class="af-lbl">Management Layer</div>
-                                <div class="af-val">Team Management & Work</div>
+                                <div class="af-val">Team Lead &amp; Work Flow</div>
                             </div>
                         </div>
                     </div>
@@ -2736,7 +3185,10 @@
                         <div class="exp-badge">April 2025 — Present</div>
                         <h3 class="exp-role">Full Stack Web Developer</h3>
                         <div class="exp-company">Hisho & Kanri Pvt Ltd</div>
-                        <p class="exp-desc">Extensively tasked with comprehensive website development, domain administration, professional business email architecture, and production web hosting infrastructure. Experienced in developing responsive platforms with database integrations across cPanel environments.</p>
+                        <p class="exp-desc">Extensively tasked with comprehensive website development, domain
+                            administration, professional business email architecture, and production web hosting
+                            infrastructure. Experienced in developing responsive platforms with database integrations
+                            across cPanel environments.</p>
                         <div class="exp-tech">
                             <span class="et">PHP Core</span>
                             <span class="et">MySQL</span>
@@ -2749,7 +3201,9 @@
                         <div class="exp-badge">March 2024 — March 2025</div>
                         <h3 class="exp-role">Full Stack Developer</h3>
                         <div class="exp-company">GR Networks, Chennai</div>
-                        <p class="exp-desc">Designed and built responsive student learning management pages. Collaborated with core teams to enhance overall product delivery metrics and user journey experience across multi-platform desktop and viewport channels.</p>
+                        <p class="exp-desc">Designed and built responsive student learning management pages.
+                            Collaborated with core teams to enhance overall product delivery metrics and user journey
+                            experience across multi-platform desktop and viewport channels.</p>
                         <div class="exp-tech">
                             <span class="et">HTML5/CSS3</span>
                             <span class="et">JavaScript</span>
@@ -2781,12 +3235,16 @@
                             <div class="prj-info-top">
                                 <h3>Asli Pak Punjab</h3>
                                 <div class="prj-loc">International Delivery — Malaysia</div>
-                                <p class="prj-desc">Developed a fully responsive restaurant website with customized menu displays, modern UI configurations, and online ordering pipelines.</p>
+                                <p class="prj-desc">Developed a fully responsive restaurant website with customized menu
+                                    displays, modern UI configurations, and online ordering pipelines.</p>
                             </div>
                             <div class="prj-stack-wrap">
-                                <div class="prj-stack"><span class="ps">HTML5</span><span class="ps">Bootstrap</span><span class="ps">PHP</span><span class="ps">MySQL</span></div>
+                                <div class="prj-stack"><span class="ps">HTML5</span><span
+                                        class="ps">Bootstrap</span><span class="ps">PHP</span><span
+                                        class="ps">MySQL</span></div>
                                 <div class="prj-links-container">
-                                    <a href="https://www.aslipakpunjab.com/ " target="_blank" class="prj-link">Launch Website ➔</a>
+                                    <a href="https://www.aslipakpunjab.com/ " target="_blank" class="prj-link">Launch
+                                        Website ➔</a>
                                 </div>
                             </div>
                         </div>
@@ -2804,12 +3262,16 @@
                             <div class="prj-info-top">
                                 <h3>Monal MY</h3>
                                 <div class="prj-loc">Gourmet Showcases — Malaysia</div>
-                                <p class="prj-desc">Engineered interactive restaurant frontends focusing on responsive layout shifts, fast image delivery, and cross-platform visibility.</p>
+                                <p class="prj-desc">Engineered interactive restaurant frontends focusing on responsive
+                                    layout shifts, fast image delivery, and cross-platform visibility.</p>
                             </div>
                             <div class="prj-stack-wrap">
-                                <div class="prj-stack"><span class="ps">CSS3</span><span class="ps">JavaScript</span><span class="ps">UIUX</span><span class="ps">Responsive</span></div>
+                                <div class="prj-stack"><span class="ps">CSS3</span><span
+                                        class="ps">JavaScript</span><span class="ps">UIUX</span><span
+                                        class="ps">Responsive</span></div>
                                 <div class="prj-links-container">
-                                    <a href="https://monalmy.com/ " target="_blank" class="prj-link">Launch Website ➔</a>
+                                    <a href="https://monalmy.com/ " target="_blank" class="prj-link">Launch Website
+                                        ➔</a>
                                 </div>
                             </div>
                         </div>
@@ -2827,12 +3289,15 @@
                             <div class="prj-info-top">
                                 <h3>Daeeeomy</h3>
                                 <div class="prj-loc">Digital Menu Systems — Malaysia</div>
-                                <p class="prj-desc">Optimized interface interaction architectures for retail dining experiences, handling high asset scaling across all viewports.</p>
+                                <p class="prj-desc">Optimized interface interaction architectures for retail dining
+                                    experiences, handling high asset scaling across all viewports.</p>
                             </div>
                             <div class="prj-stack-wrap">
-                                <div class="prj-stack"><span class="ps">HTML5</span><span class="ps">Bootstrap</span><span class="ps">JS Flows</span></div>
+                                <div class="prj-stack"><span class="ps">HTML5</span><span
+                                        class="ps">Bootstrap</span><span class="ps">JS Flows</span></div>
                                 <div class="prj-links-container">
-                                    <a href="https://daeeeomy.com/ " target="_blank" class="prj-link">Launch Website ➔</a>
+                                    <a href="https://daeeeomy.com/ " target="_blank" class="prj-link">Launch Website
+                                        ➔</a>
                                 </div>
                             </div>
                         </div>
@@ -2850,12 +3315,15 @@
                             <div class="prj-info-top">
                                 <h3>Haris Fresh Mart</h3>
                                 <div class="prj-loc">Fresh Produce Retail — Malaysia</div>
-                                <p class="prj-desc">Structured catalog frameworks and user interfaces to present commercial product inventories with fast browsing responses.</p>
+                                <p class="prj-desc">Structured catalog frameworks and user interfaces to present
+                                    commercial product inventories with fast browsing responses.</p>
                             </div>
                             <div class="prj-stack-wrap">
-                                <div class="prj-stack"><span class="ps">PHP Core</span><span class="ps">Bootstrap</span><span class="ps">Database</span></div>
+                                <div class="prj-stack"><span class="ps">PHP Core</span><span
+                                        class="ps">Bootstrap</span><span class="ps">Database</span></div>
                                 <div class="prj-links-container">
-                                    <a href="https://harisfreshmart.com/" target="_blank" class="prj-link">Launch Website ➔</a>
+                                    <a href="https://harisfreshmart.com/" target="_blank" class="prj-link">Launch
+                                        Website ➔</a>
                                 </div>
                             </div>
                         </div>
@@ -2873,12 +3341,15 @@
                             <div class="prj-info-top">
                                 <h3>Aari Work Shop</h3>
                                 <div class="prj-loc">Best Enterprises — Thanjavur</div>
-                                <p class="prj-desc">Designed an e-commerce platform incorporating seamless product lists, structural shopping cart mechanics, and localized inquiries.</p>
+                                <p class="prj-desc">Designed an e-commerce platform incorporating seamless product
+                                    lists, structural shopping cart mechanics, and localized inquiries.</p>
                             </div>
                             <div class="prj-stack-wrap">
-                                <div class="prj-stack"><span class="ps">Cart Logics</span><span class="ps">Product Grid</span><span class="ps">MySQL</span></div>
+                                <div class="prj-stack"><span class="ps">Cart Logics</span><span class="ps">Product
+                                        Grid</span><span class="ps">MySQL</span></div>
                                 <div class="prj-links-container">
-                                    <a href="https://bestenterprisestnj.com/ " target="_blank" class="prj-link">Launch Website ➔</a>
+                                    <a href="https://bestenterprisestnj.com/ " target="_blank" class="prj-link">Launch
+                                        Website ➔</a>
                                 </div>
                             </div>
                         </div>
@@ -2896,12 +3367,15 @@
                             <div class="prj-info-top">
                                 <h3>Accounting Service Portal</h3>
                                 <div class="prj-loc">Corporate Client Architecture — Hiskan</div>
-                                <p class="prj-desc">Built a high-performance business portal equipped with service listings, client discovery pipelines, and deep search engine visibility.</p>
+                                <p class="prj-desc">Built a high-performance business portal equipped with service
+                                    listings, client discovery pipelines, and deep search engine visibility.</p>
                             </div>
                             <div class="prj-stack-wrap">
-                                <div class="prj-stack"><span class="ps">SEO Engine</span><span class="ps">Form Security</span><span class="ps">Clean UX</span></div>
+                                <div class="prj-stack"><span class="ps">SEO Engine</span><span class="ps">Form
+                                        Security</span><span class="ps">Clean UX</span></div>
                                 <div class="prj-links-container">
-                                    <a href="https://www.hiskan.com/ " target="_blank" class="prj-link">Launch Website ➔</a>
+                                    <a href="https://www.hiskan.com/ " target="_blank" class="prj-link">Launch Website
+                                        ➔</a>
                                 </div>
                             </div>
                         </div>
@@ -2919,12 +3393,15 @@
                             <div class="prj-info-top">
                                 <h3>Emozin Gaming (KR)</h3>
                                 <div class="prj-loc">Animated Interfaces — Korea</div>
-                                <p class="prj-desc">Assembled a multi-tier gaming network featuring responsive layouts, fast rendering execution steps, and tailored interaction elements.</p>
+                                <p class="prj-desc">Assembled a multi-tier gaming network featuring responsive layouts,
+                                    fast rendering execution steps, and tailored interaction elements.</p>
                             </div>
                             <div class="prj-stack-wrap">
-                                <div class="prj-stack"><span class="ps">Animations</span><span class="ps">Asset Caching</span><span class="ps">React UI</span></div>
+                                <div class="prj-stack"><span class="ps">Animations</span><span class="ps">Asset
+                                        Caching</span><span class="ps">React UI</span></div>
                                 <div class="prj-links-container">
-                                    <a href="https://emozin.co.kr/" target="_blank" class="prj-link">Launch Website ➔</a>
+                                    <a href="https://emozin.co.kr/" target="_blank" class="prj-link">Launch Website
+                                        ➔</a>
                                 </div>
                             </div>
                         </div>
@@ -2942,10 +3419,12 @@
                             <div class="prj-info-top">
                                 <h3>Website Development Hub</h3>
                                 <div class="prj-loc">Service Ecosystem — Emozin Net</div>
-                                <p class="prj-desc">Engineered a structural agency profile tracking client inquiry paths, specialized developer portfolio assets, and fluid design cards.</p>
+                                <p class="prj-desc">Engineered a structural agency profile tracking client inquiry
+                                    paths, specialized developer portfolio assets, and fluid design cards.</p>
                             </div>
                             <div class="prj-stack-wrap">
-                                <div class="prj-stack"><span class="ps">Lead Engine</span><span class="ps">Tailored System</span><span class="ps">Bootstrap</span></div>
+                                <div class="prj-stack"><span class="ps">Lead Engine</span><span class="ps">Tailored
+                                        System</span><span class="ps">Bootstrap</span></div>
                                 <div class="prj-links-container">
                                     <a href="https://emozin.net/" target="_blank" class="prj-link">Launch Website ➔</a>
                                 </div>
@@ -3000,20 +3479,27 @@
                         <div class="academic-svg-wrapper">
                             <svg class="edu-vector-art" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                                 <!-- Theme Abstract Intersecting Rings -->
-                                <circle cx="100" cy="115" r="55" fill="none" stroke="rgba(232, 0, 29, 0.08)" stroke-width="2" stroke-dasharray="6 4" class="rot-clockwise" />
-                                <circle cx="100" cy="115" r="70" fill="none" stroke="rgba(8, 8, 8, 0.04)" stroke-width="1.5" />
+                                <circle cx="100" cy="115" r="55" fill="none" stroke="rgba(232, 0, 29, 0.08)"
+                                    stroke-width="2" stroke-dasharray="6 4" class="rot-clockwise" />
+                                <circle cx="100" cy="115" r="70" fill="none" stroke="rgba(8, 8, 8, 0.04)"
+                                    stroke-width="1.5" />
 
                                 <!-- Cap Base Geometry Structure -->
-                                <path d="M 65,115 L 65,132 C 65,142 135,142 135,132 L 135,115" fill="none" stroke="#080808" stroke-width="3.5" stroke-linecap="round" />
-                                <path d="M 70,123 C 70,134 130,134 130,123" fill="none" stroke="#E8001D" stroke-width="1.5" opacity="0.8" />
+                                <path d="M 65,115 L 65,132 C 65,142 135,142 135,132 L 135,115" fill="none"
+                                    stroke="#080808" stroke-width="3.5" stroke-linecap="round" />
+                                <path d="M 70,123 C 70,134 130,134 130,123" fill="none" stroke="#E8001D"
+                                    stroke-width="1.5" opacity="0.8" />
 
                                 <!-- Graduation Mortarboard Rhombus Top -->
-                                <polygon points="100,75 160,98 100,121 40,98" fill="#080808" stroke="#080808" stroke-width="1" class="float-subtle" />
+                                <polygon points="100,75 160,98 100,121 40,98" fill="#080808" stroke="#080808"
+                                    stroke-width="1" class="float-subtle" />
                                 <polygon points="100,78 152,98 100,118 48,98" fill="#141414" />
-                                <polygon points="100,75 160,98 100,121 40,98" fill="none" stroke="#E8001D" stroke-width="1.5" class="pulse-border" />
+                                <polygon points="100,75 160,98 100,121 40,98" fill="none" stroke="#E8001D"
+                                    stroke-width="1.5" class="pulse-border" />
 
                                 <!-- Tassel Graphic Linkage -->
-                                <path d="M 100,98 C 85,102 74,118 74,126" fill="none" stroke="#E8001D" stroke-width="2.5" stroke-linecap="round" />
+                                <path d="M 100,98 C 85,102 74,118 74,126" fill="none" stroke="#E8001D"
+                                    stroke-width="2.5" stroke-linecap="round" />
                                 <circle cx="100" cy="98" r="3" fill="#E8001D" />
                                 <rect x="71" y="126" width="6" height="12" rx="1" fill="#E8001D" class="swing-tassel" />
                             </svg>
@@ -3021,8 +3507,10 @@
 
                         <!-- Floating Academic Elements Indicators -->
                         <div class="floating-edu-icon i-book"><i class="fa fa-book" aria-hidden="true"></i></div>
-                        <div class="floating-edu-icon i-cert"><i class="fa fa-certificate" aria-hidden="true" style="color: #E8001D;"></i></div>
-                        <div class="floating-edu-icon i-code"><i class="fa fa-laptop" aria-hidden="true" style="color: #E8001D;"></i></div>
+                        <div class="floating-edu-icon i-cert"><i class="fa fa-certificate" aria-hidden="true"
+                                style="color: #E8001D;"></i></div>
+                        <div class="floating-edu-icon i-code"><i class="fa fa-laptop" aria-hidden="true"
+                                style="color: #E8001D;"></i></div>
                         <div class="floating-edu-icon i-univ"><i class="fa fa-building" aria-hidden="true"></i></div>
                     </div>
                 </div>
@@ -3037,9 +3525,11 @@
                 <h2 class="sec-title">Initiate Transmission</h2>
 
                 <div class="contact-layout">
+                    <!-- Left: Info -->
                     <div class="contact-info rv-l">
                         <h3 class="contact-heading">Let's create something <span>unrivaled</span>.</h3>
-                        <p class="contact-blurb">Feel free to connect directly via telephone networks or electronic mail drop channels to discuss technical alignments or contract assignments.</p>
+                        <p class="contact-blurb">Feel free to connect directly via telephone networks or electronic mail
+                            drop channels to discuss technical alignments or contract assignments.</p>
 
                         <a href="mailto:mrnithishkumars@gmail.com" class="clink">
                             <div class="clink-icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
@@ -3055,36 +3545,55 @@
                                 <span class="clink-val">+91 70102 34587</span>
                             </div>
                         </a>
+                        <a href="https://wa.me/917010234587" target="_blank" class="clink">
+                            <div class="clink-icon"><i class="fab fa-whatsapp" aria-hidden="true"></i></div>
+                            <div class="clink-meta">
+                                <span class="clink-lbl">WhatsApp Direct</span>
+                                <span class="clink-val">+91 70102 34587</span>
+                            </div>
+                        </a>
+                        <a href="https://www.linkedin.com/in/nithishkumar19/" target="_blank" class="clink">
+                            <div class="clink-icon"><i class="fab fa-linkedin" aria-hidden="true"></i></div>
+                            <div class="clink-meta">
+                                <span class="clink-lbl">LinkedIn Profile</span>
+                                <span class="clink-val">linkedin.com/in/nithishkumar19</span>
+                            </div>
+                        </a>
                     </div>
 
-                    <!-- Updated Form with Phone Input and passing form object to doSend -->
-                    <form class="contact-form rv-r" onsubmit="event.preventDefault(); doSend(this);">
-                        <div class="form-row">
-                            <div class="fgrp">
-                                <input type="text" id="fname" placeholder=" " required />
-                                <label for="fname">Your Name</label>
+                    <!-- Right: Bootstrap Form -->
+                    <form class="contact-form-card rv-r" onsubmit="event.preventDefault(); doSend();">
+                        <div class="row g-3 mb-3">
+                            <div class="col-12 col-sm-6">
+                                <label for="fname" class="cf-label">Your Name</label>
+                                <input type="text" id="fname" class="cf-control" placeholder="Enter your full name"
+                                    required />
                             </div>
-                            <div class="fgrp">
-                                <input type="email" id="fmail" placeholder=" " required />
-                                <label for="fmail">Email Address</label>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="fgrp">
-                                <input type="tel" id="fphone" placeholder=" " required />
-                                <label for="fphone">Phone Number</label>
-                            </div>
-                            <div class="fgrp">
-                                <input type="text" id="fsubj" placeholder=" " required />
-                                <label for="fsubj">Project Domain Intent</label>
+                            <div class="col-12 col-sm-6">
+                                <label for="fmail" class="cf-label">Email Address</label>
+                                <input type="email" id="fmail" class="cf-control" placeholder="your@email.com"
+                                    required />
                             </div>
                         </div>
-                        <div class="fgrp">
-                            <textarea id="fmsg" rows="5" placeholder=" " required></textarea>
-                            <label for="fmsg">Detailed Message Brief</label>
+                        <div class="row g-3 mb-3">
+                            <div class="col-12 col-sm-6">
+                                <label for="fphone" class="cf-label">Phone Number</label>
+                                <input type="tel" id="fphone" class="cf-control" placeholder="+91 00000 00000"
+                                    required />
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <label for="fsubj" class="cf-label">Project Domain</label>
+                                <input type="text" id="fsubj" class="cf-control" placeholder="e.g. Web App, E-Commerce"
+                                    required />
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="fmsg" class="cf-label">Detailed Message</label>
+                            <textarea id="fmsg" class="cf-control" rows="5"
+                                placeholder="Describe your project or inquiry in detail..." required></textarea>
                         </div>
                         <button type="submit" class="btn-send">
-                            <span>Send Secure Message</span>
+                            <span>Send Secure Message &nbsp;→</span>
                         </button>
                     </form>
                 </div>
@@ -3095,12 +3604,107 @@
 
     <!-- Footer -->
     <footer>
+        <div class="ft-top">
+            <div class="ft-brand-col">
+                <a href="#home" class="ft-logo">Nithish Kumar<span>.</span></a>
+                <p class="ft-tagline">Full Stack Web Developer crafting high-performance, responsive web applications
+                    with clean code and purposeful design.</p>
+                <div class="ft-socials">
+                    <a href="https://github.com/Nithishkumars-2001" target="_blank" class="ft-social-btn"
+                        title="GitHub">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                            <path
+                                d="M12 2C6.48 2 2 6.58 2 12.23c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.89-2.78.62-3.37-1.2-3.37-1.2-.46-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.57 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.08 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 6.84c.85 0 1.71.12 2.51.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.95-2.34 4.82-4.57 5.08.36.32.68.95.68 1.92 0 1.39-.01 2.5-.01 2.84 0 .27.18.6.69.49A10.25 10.25 0 0 0 22 12.23C22 6.58 17.52 2 12 2z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/nithishkumar19/" target="_blank" class="ft-social-btn"
+                        title="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                            <path
+                                d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.48 1s2.5 1.12 2.5 2.5zM.5 8h4V24h-4V8zm7.5 0h3.84v2.16h.05c.53-1.01 1.84-2.16 3.79-2.16 4.05 0 4.8 2.67 4.8 6.14V24h-4v-7.08c0-1.69-.03-3.86-2.35-3.86-2.35 0-2.71 1.84-2.71 3.74V24h-4V8z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/_._n.i.t.h.i.s.h_k.u.m.a.r_._?igsh=MXV0cWFteTgzdGlrbg=="
+                        target="_blank" class="ft-social-btn" title="Instagram">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                            <path
+                                d="M7.75 2C4.57 2 2 4.57 2 7.75v8.5C2 19.43 4.57 22 7.75 22h8.5C19.43 22 22 19.43 22 16.25v-8.5C22 4.57 19.43 2 16.25 2h-8.5zm0 2h8.5A3.75 3.75 0 0 1 20 7.75v8.5A3.75 3.75 0 0 1 16.25 20h-8.5A3.75 3.75 0 0 1 4 16.25v-8.5A3.75 3.75 0 0 1 7.75 4zm8.75 1a1.25 1.25 0 1 0 0 2.5A1.25 1.25 0 0 0 16.5 5zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z" />
+                        </svg>
+                    </a>
+                    <a href="https://wa.me/917010234587" target="_blank" class="ft-social-btn" title="WhatsApp">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                            <path
+                                d="M20.52 3.48A11.88 11.88 0 0 0 12.04 0C5.42 0 .04 5.38.04 12c0 2.11.55 4.17 1.59 5.99L0 24l6.17-1.62A11.95 11.95 0 0 0 12.04 24c6.62 0 12-5.38 12-12 0-3.2-1.25-6.21-3.52-8.52zM12.04 21.82c-1.8 0-3.56-.48-5.1-1.39l-.36-.21-3.66.96.98-3.57-.24-.37a9.78 9.78 0 0 1-1.5-5.24c0-5.42 4.41-9.84 9.84-9.84 2.63 0 5.1 1.02 6.96 2.88a9.79 9.79 0 0 1 2.88 6.96c0 5.43-4.41 9.84-9.8 9.84z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="ft-links-col">
+                <h4 class="ft-col-title">Quick Links</h4>
+                <ul class="ft-link-list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="ft-links-col">
+                <h4 class="ft-col-title">Services</h4>
+                <ul class="ft-link-list">
+                    <li><a href="#contact">Full Stack Development</a></li>
+                    <li><a href="#contact">Responsive Web Design</a></li>
+                    <li><a href="#contact">Database Architecture</a></li>
+                    <li><a href="#contact">cPanel &amp; Hosting Setup</a></li>
+                    <li><a href="#contact">SEO Optimization</a></li>
+                    <li><a href="#contact">UI/UX Consultation</a></li>
+                </ul>
+            </div>
+
+            <div class="ft-contact-col">
+                <h4 class="ft-col-title">Get In Touch</h4>
+                <div class="ft-contact-list">
+                    <div class="ft-contact-item">
+                        <span class="ft-ci-icon"> <i class="fa fa-envelope" aria-hidden="true"></i> </span>
+                        <a href="mailto:nithishkumar70102@gmail.com">nithishkumar70102@gmail.com</a>
+                    </div>
+                    <div class="ft-contact-item">
+                        <span class="ft-ci-icon"><i class="fa fa-mobile" aria-hidden="true"></i></span>
+                        <a href="tel:+917010234587">+91 70102 34587</a>
+                    </div>
+                    <div class="ft-contact-item">
+                        <span class="ft-ci-icon"> <i class="fa fa-thumb-tack" aria-hidden="true"></i> </span>
+                        <span>Thanjavur, Tamil Nadu, India.</span>
+                    </div>
+                    <div class="ft-contact-item">
+                        <span class="ft-ci-icon"><i class="fa fa-briefcase" aria-hidden="true"></i></span>
+                        <span>Available for Freelance &amp; Full-time</span>
+                    </div>
+                </div>
+                <a href="Nithishkumar_Resume.pdf" download class="ft-resume-btn">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="7 10 12 15 17 10" />
+                        <line x1="12" y1="15" x2="12" y2="3" />
+                    </svg>
+                    Download Resume
+                </a>
+            </div>
+        </div>
+
+        <div class="ft-divider"></div>
+
         <div class="ft-inner">
             <div class="ft-copy">
-                &copy; 2026 <strong>Nithish Kumar</strong>. All Rights Reserved. Mapped with structural design integrity.
+                &copy; 2026 <strong>Nithish Kumar</strong>. All Rights Reserved. 
             </div>
+
             <div class="ft-meta">
-                Thanjavur, Tamil Nadu.
+                Thanjavur, Tamil Nadu · India
             </div>
         </div>
     </footer>
