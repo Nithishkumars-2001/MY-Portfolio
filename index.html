@@ -14,23 +14,27 @@
     <meta property="og:locale" content="en_IN" />
     <meta property="og:locale:alternate" content="en_MY" />
     <meta property="og:type" content="profile" />
-    <meta property="og:url" content="https://snithishkumar.netlify.app/" /> 
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:url" content="https://snithishkumar.netlify.app/" />
     <meta property="og:title" content="Nithish Kumar | Creative Full-Stack Developer " />
     <meta property="og:description" content="Explore the professional portfolio and resume of Nithish Kumar. Specializing in high-performance web development, premium UI/UX design, and digital solutions blending modern code with clean aesthetics." />
-    <meta property="og:site_name" content="Nithish Portfolio" /> 
-    <meta property="og:image" content="https://snithishkumar.netlify.app/my_image.jpeg" />
+    <meta property="og:site_name" content="Nithish Portfolio" />
+    <meta property="og:image" content="my_image.jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:alt" content="Nithish - Professional Developer Portfolio Banner" />
 
     <!-- ─── TWITTER / X CARD ─── -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://snithishkumar.netlify.app/" /> 
+    <meta name="twitter:url" content="https://snithishkumar.netlify.app/" />
     <meta name="twitter:title" content="Nithish | Creative Full-Stack Developer" />
     <meta name="twitter:description" content="Explore the professional portfolio and resume of Nithish Kumar. Specializing in high-performance web development, premium UI/UX design, and clean digital solutions." />
-    <meta name="twitter:image" content="https://snithishkumar.netlify.app/my_image.jpeg" />
+    <meta name="twitter:image" content="my_image.jpeg" />
     <meta name="twitter:image:alt" content="Nithish - Professional Developer Portfolio Banner" />
+
+    <!-- Profile Specific Meta (Excellent for Resumes) -->
+    <meta property="profile:first_name" content="Nithish" />
+    <meta property="profile:username" content="nithish" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -2959,6 +2963,357 @@
                 justify-content: center;
             }
         }
+
+        /* ══ FREELANCER PROFILE SECTION ══ */
+        .fl-section {
+            background: var(--g100);
+            padding: 80px 0;
+            position: relative;
+            border-top: 1px solid var(--g200);
+            border-bottom: 1px solid var(--g200);
+            overflow: hidden;
+        }
+
+        .fl-section::before {
+            content: 'FREELANCER';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(60px, 12vw, 160px);
+            color: var(--g200);
+            letter-spacing: 0.1em;
+            pointer-events: none;
+            white-space: nowrap;
+            line-height: 1;
+        }
+
+        .fl-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 48px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .fl-eyebrow {
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 24px;
+        }
+
+        .fl-card {
+            background: var(--white);
+            border: 1px solid var(--g200);
+            display: flex;
+            align-items: center;
+            gap: 0;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, .06);
+        }
+
+        .fl-identity {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 36px 40px;
+            flex-shrink: 0;
+            min-width: 260px;
+        }
+
+        .fl-avatar-wrap {
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .fl-avatar {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--white);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, .12);
+            display: block;
+        }
+
+        .fl-badge {
+            position: absolute;
+            bottom: -4px;
+            right: -4px;
+            width: 24px;
+            height: 24px;
+            background: #0A6ACF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--white);
+            overflow: hidden;
+        }
+
+        .fl-bird {
+            width: 14px;
+            height: 14px;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+        }
+
+        .fl-name-block {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .fl-name {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 22px;
+            letter-spacing: 1px;
+            color: var(--black);
+            text-decoration: none;
+            line-height: 1;
+            transition: color .25s;
+        }
+
+        .fl-name:hover {
+            color: var(--red);
+        }
+
+        .fl-title {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--g600);
+            letter-spacing: 0.5px;
+            margin: 0;
+        }
+
+        .fl-status-dot {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            font-family: 'DM Mono', monospace;
+            letter-spacing: 0.5px;
+            color: #0f7a2a;
+            margin-top: 6px;
+        }
+
+        .fl-status-dot span {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #22c55e;
+            display: inline-block;
+            animation: fl-pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes fl-pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: .5;
+                transform: scale(1.4);
+            }
+        }
+
+        .fl-divider-v {
+            width: 1px;
+            background: var(--g200);
+            align-self: stretch;
+            flex-shrink: 0;
+        }
+
+        .fl-details {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            padding: 36px 40px;
+            flex: 1;
+        }
+
+        .fl-detail-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+
+        .fl-detail-icon {
+            width: 34px;
+            height: 34px;
+            background: var(--g100);
+            border: 1px solid var(--g200);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .fl-detail-icon svg {
+            width: 15px;
+            height: 15px;
+            stroke: var(--red);
+        }
+
+        .fl-detail-body {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .fl-detail-label {
+            font-family: 'DM Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--g400);
+        }
+
+        .fl-detail-val {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--txt);
+            text-decoration: none;
+            transition: color .25s;
+            word-break: break-all;
+        }
+
+        a.fl-detail-val:hover {
+            color: var(--red);
+        }
+
+        .fl-cta-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 36px 40px;
+            border-left: 1px solid var(--g200);
+            flex-shrink: 0;
+        }
+
+        .fl-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            background: var(--red);
+            color: var(--white);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 14px rgba(232, 0, 29, 0.25);
+            transition: transform .3s cubic-bezier(.16, 1, .3, 1), box-shadow .3s;
+        }
+
+        .fl-cta-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--red-dark);
+            transform: translateX(-101%);
+            transition: transform .4s cubic-bezier(.16, 1, .3, 1);
+        }
+
+        .fl-cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(232, 0, 29, 0.35);
+        }
+
+        .fl-cta-btn:hover::before {
+            transform: translateX(0);
+        }
+
+        .fl-cta-btn>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .fl-cta-bird {
+            width: 18px;
+            height: 18px;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+        }
+
+        .fl-cta-note {
+            font-family: 'DM Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--g400);
+            margin: 0;
+        }
+
+        @media (max-width: 900px) {
+            .fl-card {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .fl-divider-v {
+                display: none;
+            }
+
+            .fl-identity {
+                border-bottom: 1px solid var(--g200);
+                min-width: unset;
+                padding: 28px;
+            }
+
+            .fl-details {
+                border-bottom: 1px solid var(--g200);
+                padding: 28px;
+            }
+
+            .fl-cta-wrap {
+                border-left: none;
+                padding: 28px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .fl-container {
+                padding: 0 20px;
+            }
+
+            .fl-section {
+                padding: 60px 0;
+            }
+
+            .fl-identity,
+            .fl-details,
+            .fl-cta-wrap {
+                padding: 24px 20px;
+            }
+
+            .fl-details {
+                gap: 16px;
+            }
+
+            .fl-cta-wrap {
+                align-items: stretch;
+            }
+
+            .fl-cta-btn {
+                justify-content: center;
+            }
+
+            .fl-cta-note {
+                text-align: center;
+            }
+        }
     </style>
 
 </head>
@@ -3855,6 +4210,94 @@
         </section>
 
     </main>
+
+    <!-- ══ FREELANCER PROFILE SECTION ══ -->
+    <section id="freelancer" class="fl-section">
+        <div class="fl-container">
+            <!-- Eyebrow label -->
+            <p class="fl-eyebrow">Available for Hire</p>
+
+            <div class="fl-card rv">
+                <!-- Left: avatar + identity -->
+                <div class="fl-identity">
+                    <div class="fl-avatar-wrap">
+                        <img
+                            src="https://cdn6.f-cdn.com/ppic/305005092/logo/93226346/profile_logo_93226346.jpg"
+                            alt="Nithish Kumar — Freelancer Profile"
+                            class="fl-avatar" />
+                        <span class="fl-badge" title="Verified on Freelancer.com">
+                            <!-- Freelancer bird icon -->
+                            <img src="https://www.freelancer.com/static/css/images/landingpage/hireme-widget-builder/fl-bird-icon.png" alt="Freelancer" class="fl-bird" />
+                        </span>
+                    </div>
+
+                    <div class="fl-name-block">
+                        <a href="https://www.freelancer.com/affiliates/email/93226346/" target="_blank" rel="noopener" class="fl-name">Nithish Kumar</a>
+                        <p class="fl-title">Full Stack Website Developer</p>
+                        <span class="fl-status-dot"><span></span> Open to projects</span>
+                    </div>
+                </div>
+
+                <!-- Divider (visible on desktop) -->
+                <div class="fl-divider-v"></div>
+
+                <!-- Right: contact details -->
+                <div class="fl-details">
+                    <div class="fl-detail-row">
+                        <span class="fl-detail-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.91 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.82 1.18h3a2 2 0 0 1 2 1.72c.13 1.05.37 2.07.7 3.06a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.99.33 2 .57 3.06.7a2 2 0 0 1 1.72 2.03z" />
+                            </svg>
+                        </span>
+                        <div class="fl-detail-body">
+                            <span class="fl-detail-label">Phone / Mobile</span>
+                            <a href="tel:+917010234587" class="fl-detail-val">+91 70102 34587</a>
+                        </div>
+                    </div>
+
+                    <div class="fl-detail-row">
+                        <span class="fl-detail-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="4" width="20" height="16" rx="2" />
+                                <polyline points="2,4 12,13 22,4" />
+                            </svg>
+                        </span>
+                        <div class="fl-detail-body">
+                            <span class="fl-detail-label">Email</span>
+                            <a href="mailto:nithishkumar70102@gmail.com" class="fl-detail-val">nithishkumar70102@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="fl-detail-row">
+                        <span class="fl-detail-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                        </span>
+                        <div class="fl-detail-body">
+                            <span class="fl-detail-label">Location</span>
+                            <span class="fl-detail-val">Thanjavur, Tamil Nadu, India</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="fl-cta-wrap">
+                    <a href="https://www.freelancer.com/affiliates/email/93226346/" target="_blank" rel="noopener" class="fl-cta-btn">
+                        <img src="https://www.freelancer.com/static/css/images/landingpage/hireme-widget-builder/fl-bird-icon.png" alt="" class="fl-cta-bird" aria-hidden="true" />
+                        <span>Hire Me on Freelancer.com</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                    <p class="fl-cta-note">Response within 24 hours</p>
+                </div>
+            </div>
+        </div>
+        <!-- Tracking pixel (invisible) -->
+        <img src="//t.flnwdgt.com/1px.gif?username=nithishkumars19&en=externalHireme&method=img&label=hiremeEmailImpression&ip=120.60.44.14&type=emailSignature" alt="" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;" />
+    </section>
 
     <!-- Footer -->
     <footer>
